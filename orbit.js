@@ -1,4 +1,4 @@
-const canvas = document.querySelector('#sheet')
+const canvas = document.querySelector('#canvas')
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -32,7 +32,7 @@ window.addEventListener('resize', e => {
 let circleArray = []
 const init = () => {
   circleArray = []
-  for (let index = 0; index < 20; index++) {
+  for (let index = 0; index < 500; index++) {
 
     let radius = Math.floor((Math.random() * 5) + 1)
     let x = canvas.width / 2
@@ -48,7 +48,7 @@ function Particle(x, y, velocity, radius, color) {
   this.radians = Math.random() * Math.PI * 2
   this.radius = radius;
   this.color = `${colorArray[Math.floor(Math.random() * colorArray.length - 1)]}`
-  this.distanceFromCenter = (Math.random() * 120) + 50
+  this.distanceFromCenter = (Math.random() * 1200) + 50
 
   this.update = function () {
     const lastPoint = {
